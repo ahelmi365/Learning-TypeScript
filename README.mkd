@@ -1,0 +1,654 @@
+## Roadmap of TypeScript topics that a frontend developer who develops projects in React using functional components might want to learn:
+
+- Basic Types: Learn about the basic types in TypeScript, such as string, number, boolean, null, undefined, object, and void:
+
+  ```ts
+  let name: string = "John Doe";
+  let age: number = 30;
+  let isDeveloper: boolean = true;
+  let x: null = null;
+  let y: undefined = undefined;
+  let person: object = { name: "John Doe", age: 30 };
+  let z: void = undefined;
+  ```
+
+- Arrays: Learn how to define arrays in TypeScript to store multiple values of the same type:
+
+  ```ts
+  let names: string[] = ["John Doe", "Jane Doe", "Jack Doe"];
+  let ages: number[] = [30, 25, 20];
+  let isDeveloper: boolean[] = [true, false, true];
+  ```
+
+- Tuples: Learn how to define tuples in TypeScript to store multiple values of different types:
+
+  ```ts
+  let person: [string, number, boolean] = ["John Doe", 30, true];
+  ```
+
+- Functions: Learn how to define functions in TypeScript to perform a particular task:
+
+  ```ts
+  function add(x: number, y: number): number {
+    return x + y;
+  }
+  ```
+
+- Optional Parameters: Learn how to define optional parameters in TypeScript to make parameters optional in functions:
+
+  ```ts
+  function add(x: number, y?: number): number {
+    return y ? x + y : x;
+  }
+  ```
+
+- Default Parameters: Learn how to define default parameters in TypeScript to assign default values to parameters in functions:
+
+  ```ts
+  function add(x: number, y: number = 0): number {
+    return x + y;
+  }
+  ```
+
+- Rest Parameters: Learn how to define rest parameters in TypeScript to pass a variable number of arguments to functions:
+
+  ```ts
+  function add(...numbers: number[]): number {
+    return numbers.reduce((x, y) => x + y);
+  }
+  ```
+
+- Function Overloading: Learn how to define function overloads in TypeScript to create multiple function signatures for the same function:
+
+  ```ts
+  function add(x: number, y: number): number;
+  function add(x: string, y: string): string;
+  function add(x: any, y: any): any {
+    return x + y;
+  }
+  ```
+
+- Enums: Learn how to define enums in TypeScript to define a set of named constants:
+
+  ```ts
+  enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+  }
+  ```
+
+- Classes: Learn how to define classes in TypeScript to create objects:
+
+  ```ts
+  class Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+
+    constructor(name: string, age: number, isDeveloper: boolean) {
+      this.name = name;
+      this.age = age;
+      this.isDeveloper = isDeveloper;
+    }
+
+    greet() {
+      console.log(`Hi, my name is ${this.name}`);
+    }
+  }
+  ```
+
+- Access Modifiers: Learn how to use access modifiers in TypeScript to control the access to class members:
+
+  ```ts
+  class Person {
+    private name: string;
+    private age: number;
+    private isDeveloper: boolean;
+
+    constructor(name: string, age: number, isDeveloper: boolean) {
+      this.name = name;
+      this.age = age;
+      this.isDeveloper = isDeveloper;
+    }
+
+    greet() {
+      console.log(`Hi, my name is ${this.name}`);
+    }
+  }
+  ```
+
+- Getters and Setters: Learn how to define getters and setters in TypeScript to control the access to class members:
+
+  ```ts
+  class Person {
+    private _name: string;
+    private _age: number;
+    private _isDeveloper: boolean;
+
+    constructor(name: string, age: number, isDeveloper: boolean) {
+      this._name = name;
+      this._age = age;
+      this._isDeveloper = isDeveloper;
+    }
+
+    get name() {
+      return this._name;
+    }
+
+    set name(value: string) {
+      this._name = value;
+    }
+
+    greet() {
+      console.log(`Hi, my name is ${this._name}`);
+    }
+  }
+  ```
+
+- Inheritance: Learn how to use inheritance in TypeScript to create a class that inherits properties and methods from another class:
+
+  ```ts
+  class Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+
+    constructor(name: string, age: number, isDeveloper: boolean) {
+      this.name = name;
+      this.age = age;
+      this.isDeveloper = isDeveloper;
+    }
+
+    greet() {
+      console.log(`Hi, my name is ${this.name}`);
+    }
+  }
+
+  class Employee extends Person {
+    department: string;
+
+    constructor(
+      name: string,
+      age: number,
+      isDeveloper: boolean,
+      department: string
+    ) {
+      super(name, age, isDeveloper);
+      this.department = department;
+    }
+
+    greet() {
+      console.log(
+        `Hi, my name is ${this.name} and I work in ${this.department}`
+      );
+    }
+  }
+  ```
+
+- Abstract Classes: Learn how to define abstract classes in TypeScript to create classes that cannot be instantiated:
+
+  ```ts
+  abstract class Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+
+    constructor(name: string, age: number, isDeveloper: boolean) {
+      this.name = name;
+      this.age = age;
+      this.isDeveloper = isDeveloper;
+    }
+
+    abstract greet(): void;
+  }
+
+  class Employee extends Person {
+    department: string;
+
+    constructor(
+      name: string,
+      age: number,
+      isDeveloper: boolean,
+      department: string
+    ) {
+      super(name, age, isDeveloper);
+      this.department = department;
+    }
+
+    greet() {
+      console.log(
+        `Hi, my name is ${this.name} and I work in ${this.department}`
+      );
+    }
+  }
+  ```
+
+- Interfaces: Learn how to define interfaces in TypeScript to describe the shape of objects:
+
+  ```ts
+  interface Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    greet(): void;
+  }
+
+  class Employee implements Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    department: string;
+
+    constructor(
+      name: string,
+      age: number,
+      isDeveloper: boolean,
+      department: string
+    ) {
+      this.name = name;
+      this.age = age;
+      this.isDeveloper = isDeveloper;
+      this.department = department;
+    }
+
+    greet() {
+      console.log(
+        `Hi, my name is ${this.name} and I work in ${this.department}`
+      );
+    }
+  }
+  ```
+
+- Type Aliases: Learn how to define type aliases in TypeScript to create custom types:
+
+  ```ts
+  type Person = {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    greet(): void;
+  };
+
+  class Employee implements Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    department: string;
+
+    constructor(
+      name: string,
+      age: number,
+      isDeveloper: boolean,
+      department: string
+    ) {
+      this.name = name;
+      this.age = age;
+      this.isDeveloper = isDeveloper;
+      this.department = department;
+    }
+
+    greet() {
+      console.log(
+        `Hi, my name is ${this.name} and I work in ${this.department}`
+      );
+    }
+  }
+  ```
+
+- Generics: Learn how to use generics in TypeScript to create reusable code:
+
+  ```ts
+  function add<T>(x: T, y: T): T {
+    return x + y;
+  }
+  ```
+
+- Union Types: Learn how to use union types in TypeScript to define a type that can be one of several types:
+
+  ```ts
+  let name: string | null = "John Doe";
+  let age: number | null = 30;
+  let isDeveloper: boolean | null = true;
+  ```
+
+- Intersection Types: Learn how to use intersection types in TypeScript to combine multiple types into a single type:
+
+  ```ts
+  type Person = {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+  };
+
+  type Employee = {
+    department: string;
+  };
+
+  type Developer = Person & Employee;
+
+  let developer: Developer = {
+    name: "John Doe",
+    age: 30,
+    isDeveloper: true,
+    department: "Software Development",
+  };
+  ```
+
+- Type Guards: Learn how to use type guards in TypeScript to narrow down the type of a variable:
+
+  ```ts
+  function add(x: number | string, y: number | string): number | string {
+    if (typeof x === "number" && typeof y === "number") {
+      return x + y;
+    }
+
+    if (typeof x === "string" && typeof y === "string") {
+      return x.concat(y);
+    }
+
+    throw new Error("Parameters must be numbers or strings");
+  }
+  ```
+
+- Type Assertions: Learn how to use type assertions in TypeScript to tell the compiler the type of a variable:
+
+  ```ts
+  let name: string | null = "John Doe";
+  let age: number | null = 30;
+  let isDeveloper: boolean | null = true;
+
+  let person = {
+    name: name as string,
+    age: age as number,
+    isDeveloper: isDeveloper as boolean,
+  };
+  // in the above example, we are telling the compiler that the type of the name variable is string, the type of the age variable is number, and the type of the isDeveloper variable is boolean using type assertions.
+  ```
+
+- Decorators: Learn how to use decorators in TypeScript to add metadata to classes, methods, and properties:
+
+  ```ts
+  function log(target: any, key: string, descriptor: PropertyDescriptor) {
+    const originalMethod = descriptor.value;
+
+    descriptor.value = function (...args: any[]) {
+      console.log(`Arguments: ${args}`);
+
+      const result = originalMethod.apply(this, args);
+
+      console.log(`Result: ${result}`);
+
+      return result;
+    };
+
+    return descriptor;
+  }
+
+  class Calculator {
+    @log
+    add(x: number, y: number): number {
+      return x + y;
+    }
+  }
+  ```
+
+- Advanced Types: Learn about advanced types in TypeScript, such as conditional types, mapped types, and infer types:
+
+  ```ts
+  type Person = {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+  };
+
+  type Employee = {
+    department: string;
+  };
+
+  type Developer = Person & Employee;
+
+  type PersonKeys = keyof Person; // 'name' | 'age' | 'isDeveloper'
+
+  type PersonTypes = Person[keyof Person]; // string | number | boolean
+
+  type PersonWithoutAge = Omit<Person, "age">; // { name: string; isDeveloper: boolean; }
+
+  type PersonWithoutAgeAndIsDeveloper = Omit<Person, "age" | "isDeveloper">; // { name: string; }
+
+  type PersonWithoutAgeAndIsDeveloperOptional = Partial<
+    Omit<Person, "age" | "isDeveloper">
+  >; // { name?: string; }
+
+  type PersonWithoutAgeAndIsDeveloperOptionalAndDepartment = Partial<
+    Omit<Person, "age" | "isDeveloper"> & Employee
+  >; // { name?: string; department?: string; }
+
+  type PersonWithoutAgeAndIsDeveloperOptionalAndDepartmentAndName = Partial<
+    Omit<Person, "age" | "isDeveloper"> & Employee
+  > &
+    Pick<Person, "name">; // { name: string; department?: string; }
+
+  type PersonWithoutAgeAndIsDeveloperOptionalAndDepartmentAndNameAndAge =
+    Partial<Omit<Person, "age" | "isDeveloper"> & Employee> &
+      Pick<Person, "name" | "age">; // { name: string; age: number; department?: string; }
+
+  type PersonWithoutAgeAndIsDeveloperOptionalAndDepartmentAndNameAndAgeAndIsDeveloper =
+    Partial<Omit<Person, "age" | "isDeveloper"> & Employee> &
+      Pick<Person, "name" | "age" | "isDeveloper">; // { name: string; age: number; isDeveloper: boolean; department?: string; }
+  ```
+---
+- React with TypeScript: Learn how to use TypeScript with React, including
+
+1. how to define props and
+2. state types,
+3. how to use generics with React components, and
+4. how to use TypeScript with React hooks
+---
+1. how to define prop:
+   - we can define the prop types of a React component using an interface as follows:
+
+    ```tsx
+    import React, { FC } from "react";
+
+    type Props = {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    };
+
+    const Person: FC<Props> = ({ name, age, isDeveloper }) => {
+    return (
+        <div>
+        <p>Name: {name}</p>
+        <p>Age: {age}</p>
+        <p>Is Developer: {isDeveloper ? "Yes" : "No"}</p>
+        </div>
+    );
+    };
+
+    export default Person;
+    ```
+
+    - in the above example, we are defining the props type of the Person component using an interface.
+    - then we are using the interface as a generic type for the FC type.
+    - FC<Props> means that the Person component accepts props of type Props.
+    - if we try to pass props of a different type to the Person component, the TypeScript compiler will throw an error.
+    - if we don't want to define the props type of the Person component using an interface, we can define it inline as follows:
+
+    ```tsx
+    const Person: FC<{ name: string; age: number; isDeveloper: boolean }> = ({
+    name,
+    age,
+    isDeveloper,
+    }) => {
+    return (
+        <div>
+        <p>Name: {name}</p>
+        <p>Age: {age}</p>
+        <p>Is Developer: {isDeveloper ? "Yes" : "No"}</p>
+        </div>
+    );
+    };
+    ```
+
+    - in the above example, we are defining the props type of the Person component inline.
+    - then we are using the inline props type as a generic type for the FC type.
+
+2. state types in React:
+   - we can define the state type of a React component using an interface as follows:
+
+    ```tsx
+    import React, { FC, useState } from "react";
+
+    type State = {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    };
+
+    const Person: FC = () => {
+    const [state, setState] = useState<State>({
+        name: "John Doe",
+        age: 30,
+        isDeveloper: true,
+    });
+
+    return (
+        <div>
+        <p>Name: {state.name}</p>
+        <p>Age: {state.age}</p>
+        <p>Is Developer: {state.isDeveloper ? "Yes" : "No"}</p>
+        </div>
+    );
+    };
+
+    export default Person;
+    ```
+
+    - in the above example, we are defining the state type of the Person component using an interface.
+    - then we are using the interface as a generic type for the useState hook.
+    - if we try to pass state of a different type to the useState hook, the TypeScript compiler will throw an error.
+    - if we don't want to define the state type of the Person component using an interface, we can define it inline as follows:
+
+    ```tsx
+    const Person: FC = () => {
+    const [state, setState] = useState<{
+        name: string;
+        age: number;
+        isDeveloper: boolean;
+    }>({
+        name: "John Doe",
+        age: 30,
+        isDeveloper: true,
+    });
+
+    return (
+        <div>
+        <p>Name: {state.name}</p>
+        <p>Age: {state.age}</p>
+        <p>Is Developer: {state.isDeveloper ? "Yes" : "No"}</p>
+        </div>
+    );
+    };
+    ```
+
+    - in the above example, we are defining the state type of the Person component inline.
+    - then we are using the inline state type as a generic type for the useState hook.
+
+3. how to use generics with React components:
+   - we can use generics with React components as follows:
+
+    ```tsx
+    import React, { FC } from "react";
+
+    type Props<T> = {
+    items: T[];
+    renderItem: (item: T) => React.ReactNode;
+    };
+
+    const List = <T extends {}>({ items, renderItem }: Props<T>) => {
+    return <div>{items.map(renderItem)}</div>;
+    };
+
+    export default List;
+    ```
+
+    - in the above example, we are defining the props type of the List component using a generic type.
+    - then we are using the generic type as a generic type for the Props type.
+    - if we try to pass props of a different type to the List component, the TypeScript compiler will throw an error.
+    - if we don't want to define the props type of the List component using a generic type, we can define it inline as follows:
+
+    ```tsx
+    const List = <T extends {}>({ items, renderItem }: { items: T[]; renderItem: (item: T) => React.ReactNode }) => {
+    return <div>{items.map(renderItem)}</div>;
+    };
+    ```
+
+    - in the above example, we are defining the props type of the List component inline.
+    - then we are using the inline props type as a generic type for the Props type.
+
+4. how to use TypeScript with React hooks:
+   - we can use TypeScript with React hooks as follows:
+
+    ```tsx
+    import React, { FC, useState } from "react";
+
+    type State = {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+    };
+
+    const Person: FC = () => {
+    const [state, setState] = useState<State>({
+        name: "John Doe",
+        age: 30,
+        isDeveloper: true,
+    });
+
+    return (
+        <div>
+        <p>Name: {state.name}</p>
+        <p>Age: {state.age}</p>
+        <p>Is Developer: {state.isDeveloper ? "Yes" : "No"}</p>
+        </div>
+    );
+    };
+
+    export default Person;
+    ```
+
+    - in the above example, we are defining the state type of the Person component using an interface.
+    - then we are using the interface as a generic type for the useState hook.
+    - if we try to pass state of a different type to the useState hook, the TypeScript compiler will throw an error.
+    - if we don't want to define the state type of the Person component using an interface, we can define it inline as follows:
+
+    ```tsx
+    const Person: FC = () => {
+    const [state, setState] = useState<{
+        name: string;
+        age: number;
+        isDeveloper: boolean;
+    }>({
+        name: "John Doe",
+        age: 30,
+        isDeveloper: true,
+    });
+
+    return (
+        <div>
+        <p>Name: {state.name}</p>
+        <p>Age: {state.age}</p>
+        <p>Is Developer: {state.isDeveloper ? "Yes" : "No"}</p>
+        </div>
+    );
+    };
+    ```
+
+    - in the above example, we are defining the state type of the Person component inline.
+    - then we are using the inline state type as a generic type for the useState hook.
+
+
+

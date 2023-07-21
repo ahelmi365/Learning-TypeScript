@@ -1,0 +1,11 @@
+{
+    "name":"hello-ts",
+    "license": "NOLICENSE",
+    "devDependencies": {
+
+    },
+    "scripts": {
+        "dev": "tsc --watch --preserveWatchOutput"
+    }
+
+}
