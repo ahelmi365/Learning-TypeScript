@@ -445,6 +445,7 @@
 2. state types,
 3. how to use generics with React components, and
 4. how to use TypeScript with React hooks
+5. how to use TypeScript with Redux
 ---
 1. how to define prop:
    - we can define the prop types of a React component using an interface as follows:
@@ -649,6 +650,9 @@
 
     - in the above example, we are defining the state type of the Person component inline.
     - then we are using the inline state type as a generic type for the useState hook.
+  
+5. how to use TypeScript with Redux:
+  - 
+  - 
 
-
-
+- Link: https://www.typescript-training.com/course/fundamentals-v3
